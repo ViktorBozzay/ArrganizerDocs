@@ -3,9 +3,9 @@
 
   import JsonBlock from "../components/JSONBlock.svelte";
   import CodeBlock from "../components/CodeBlock.svelte"
-
   import MethodArguments from "../components/MethodArguments.svelte";
   import MethodCall from "../components/MethodCall.svelte";
+  import ResultView from "../components/ResultView.svelte";
 
   import { data } from "../mock";
 
@@ -106,7 +106,7 @@ console.log(original);`
 </script>
 
 <h2 id="constructor">Constructor</h2>
-<MethodCall {call} />
+<MethodCall {call} id="constructor"/>
 
 <h4>Parameters:</h4>
 <MethodArguments details={argumentum} />
@@ -115,5 +115,5 @@ console.log(original);`
 <JsonBlock {data} />
 <p>Creating a new Arrganizer class:</p>
 <CodeBlock {code}/>
-<p>And the result is:</p>
-<JsonBlock data={original}/>
+<h4>Result:</h4>
+<ResultView result={original} />

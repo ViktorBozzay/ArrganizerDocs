@@ -1,11 +1,12 @@
 <script lang="ts">
   import { Arrganizer } from "arrganizer";
   import CodeBlock from "../components/CodeBlock.svelte";
-  import JsonBlock from "../components/JSONBlock.svelte";
   import MethodArguments from "../components/MethodArguments.svelte";
   import MethodCall from "../components/MethodCall.svelte";
+
   import type { CodeWordType } from "../types/CodeWordType";
   import {data} from "../mock"
+  import ResultView from "../components/ResultView.svelte";
 
   const argumentum = [
     {
@@ -54,12 +55,17 @@
   });`
 
   const arrganizer = new Arrganizer(data);
-  // const tableWithSummary = arrganizer.getTables({
-  //   totalRows: true,
-  //   totalAmount: true,
-  // });
+  const tableWithSummary = arrganizer.getTables({
+    total: true,
+    average: true,
+  });
+
 </script>
-<MethodCall {call} />
+
+<MethodCall {call} id="gettables" />
+<p>
+  Returns the current data sets as tables, optionally including summary data.
+</p>
 <h4>Parameters:</h4>
 <MethodArguments details={argumentum} />
 <h4>Returns:</h4>
@@ -67,6 +73,4 @@
 <h4>Example:</h4>
 <CodeBlock {code}/>
 <h4>Results:</h4>
-<!--
-<JsonBlock data={tableWithSummary} />
--->
+<ResultView result={tableWithSummary} />

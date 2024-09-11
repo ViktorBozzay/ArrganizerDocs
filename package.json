@@ -20,6 +20,6 @@
   },
   "dependencies": {
     "arrganizer": "file:../Arrganizer",
-    "svelte-highlight": "^7.7.0",
+    "svelte-highlight": "^7.7.0"
   }
 }
