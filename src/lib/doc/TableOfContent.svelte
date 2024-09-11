@@ -8,9 +8,6 @@
       <li><a href="#gethistory">getHistory</a></li>
       <li><a href="#getdata">getData</a></li>
       <li><a href="#getoriginaldata">getOriginalData</a></li>
-      <li><a href="#reset">reset</a></li>
-      <li><a href="#undo">undo</a></li>
-      <li><a href="#redo">redo</a></li>
       <li><a href="#removekey">removeKey</a></li>
       <li><a href="#removekeys">removeKeys</a></li>
       <li><a href="#groupbydate">groupByDate</a></li>
@@ -22,7 +19,10 @@
       <li><a href="#sortbykey">sortByKey</a></li>
       <li><a href="#frequencybykeysvalue">frequencyByKeysValue</a></li>
       <li><a href="#reordercolumns">reorderColumns</a></li>
+      <li><a href="#reset">reset</a></li>
+      <li><a href="#undo">undo</a></li>
+      <li><a href="#redo">redo</a></li>
     </ul>
   </li>
-  <li><a href="#examples">Examples</a></li>
+  <!-- <li><a href="#examples">Examples</a></li> -->
 </ol>

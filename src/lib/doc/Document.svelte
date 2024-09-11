@@ -2,7 +2,7 @@
   import Installation from "./Installation.svelte";
   import Introduction from "./Introduction.svelte";
   import TableOfContent from "./TableOfContent.svelte";
-  import Constructor from "./Constructor.svelte"
+  import Constructor from "./Constructor.svelte";
   import GetTables from "./GetTables.svelte";
   import GetHistory from "./GetHistory.svelte";
   import GetData from "./GetData.svelte";
@@ -20,28 +20,73 @@
   import GroupByDate from "./GroupByDate.svelte";
   import FrequencyByKeysValue from "./FrequencyByKeysValue.svelte";
   import ReorderColumns from "./ReorderColumns.svelte";
+  import Redo from "./Redo.svelte";
 </script>
 
-<Introduction />
-<TableOfContent />
-<Installation />
-<Constructor />
+<div class="content">
+  <div class="left">
+    <TableOfContent />
+  </div>
+  <div class="right">
+    <div class="doc">
+      <Introduction />
+      <Installation />
+      <Constructor />
 
-<h2 id="methods">Methods</h2>
-<GetTables />
-<GetHistory />
-<GetData />
-<GetOriginalData />
-<Reset />
-<Undo />
-<RemoveKey />
-<RemoveKeys />
-<GroupByDate />
-<GroupByKey />
-<GroupByKeys />
-<FilterByKey />
-<Contains />
-<ModifyValue />
-<SortByKey />
-<FrequencyByKeysValue />
-<ReorderColumns />
+      <h2 id="methods">Methods</h2>
+      <GetTables />
+      <GetHistory />
+      <GetData />
+      <GetOriginalData />
+      <RemoveKey />
+      <RemoveKeys />
+      <GroupByDate />
+      <GroupByKey />
+      <GroupByKeys />
+      <FilterByKey />
+      <Contains />
+      <ModifyValue />
+      <SortByKey />
+      <FrequencyByKeysValue />
+      <ReorderColumns />
+      <Reset />
+      <Undo />
+      <Redo />
+    </div>
+  </div>
+</div>
+
+<style>
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .left {
+    width: 20%;
+    min-width: 240px;
+    max-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .right {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    max-height: 100vh;
+  }
+
+  .doc {
+    margin: auto 1rem;
+    min-width: 500px;
+    width: 80%;
+  }
+</style>

@@ -20,31 +20,33 @@
   const arrganizer = new Arrganizer(data);
   arrganizer.filterByKey("age", [25, 22]);
   arrganizer.filterByKey("age", [25]);
-  const tables = arrganizer.getTables();
-  console.log(tables);
   arrganizer.undo();
   const undoTables = arrganizer.getTables();
+  arrganizer.redo();
   console.log(undoTables);
+  const redoTables = arrganizer.getTables();
+  console.log(redoTables);
 
   const code = `  const arrganizer = new Arrganizer(data);
   arrganizer.filterByKey("age", [25, 22]);
   arrganizer.filterByKey("age", [25]);
-  const tables = arrganizer.getTables();
-  console.log(tables);
   arrganizer.undo();
   const undoTables = arrganizer.getTables();
-  console.log(undoTables);`
+  arrganizer.redo();
+  console.log(undoTables);
+  const redoTables = arrganizer.getTables();
+  console.log(redoTables);`
 </script>
 
-<MethodCall {call} id="undo" />
+<MethodCall {call} id="redo" />
 <p>
-  Undo steps back in the history to the previous state.
+  Redo steps forward in the history to the next state (if there is a next).
 </p>
 <h4>Example:</h4>
 <CodeBlock {code}/>
 
 <h4>Results:</h4>
-<h5>console.log(tables)</h5>
-<ResultView result={tables} />
 <h5>console.log(undoTables)</h5>
 <ResultView result={undoTables} />
+<h5>console.log(redoTables)</h5>
+<ResultView result={redoTables} />

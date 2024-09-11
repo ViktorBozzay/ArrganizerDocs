@@ -11,7 +11,7 @@
   examples below.</p>
 <p>To use the <code class="object">Arrganizer</code>, you need to import it into your TypeScript or JavaScript file.
 </p>
-<CodeBlock code="import Arrganizer from &#39;./path/to/Arrganizer&#39;;" />
+<CodeBlock code="import &#123; Arrganizer &#125; from &#39;arrganizer&#39;;" />
 
 <p>Ensure that all dependencies like formatters and utility functions (
   <code class="function">formatNumbers</code>

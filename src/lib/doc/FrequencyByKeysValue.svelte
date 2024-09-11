@@ -1,7 +1,13 @@
 <script lang="ts">
+  import {Arrganizer} from "arrganizer";
+
   import CodeBlock from "../components/CodeBlock.svelte";
   import MethodArguments from "../components/MethodArguments.svelte";
   import MethodCall from "../components/MethodCall.svelte";
+  import JsonBlock from "../components/JSONBlock.svelte";
+  import ResultView from "../components/ResultView.svelte";
+
+  import {data} from "../mock/data";
 
   import type { CodeWordType } from "../types/CodeWordType";
 
@@ -38,7 +44,15 @@
     { arg: "aggregateKeys", desc: "Another keys that will be aggregated.", type: "variable"},
   ];
 
-  const code = `organizer.frequencyByKeysValue("age", "ages");`;
+  const arrganizer = new Arrganizer(data);
+  arrganizer.frequencyByKeysValue(["age"]);
+  const calculatedAgeGroups = arrganizer.getTables();
+  console.log(calculatedAgeGroups);
+
+  const code = `  const arrganizer = new Arrganizer(data);
+  arrganizer.frequencyByKeysValue(["age"]);
+  const calculatedAgeGroups = arrganizer.getTables();
+  console.log(calculatedAgeGroups);`
 </script>
 
 <MethodCall {call} id="frequencybykeysvalue" />
@@ -49,3 +63,6 @@
 <MethodArguments details={argumentum} />
 <h4>Example:</h4>
 <CodeBlock {code}/>
+
+<h4>Results:</h4>
+<ResultView result={calculatedAgeGroups} />

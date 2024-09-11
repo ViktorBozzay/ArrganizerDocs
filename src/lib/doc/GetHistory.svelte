@@ -1,7 +1,13 @@
 <script lang="ts">
+  import {Arrganizer} from "arrganizer";
+
   import CodeBlock from "../components/CodeBlock.svelte";
   import MethodArguments from "../components/MethodArguments.svelte";
   import MethodCall from "../components/MethodCall.svelte";
+  import ResultView from "../components/ResultView.svelte";
+  import JsonBlock from "../components/JSONBlock.svelte";
+
+  import {data} from "../mock/data";
 
   import type { CodeWordType } from "../types/CodeWordType";
 
@@ -20,7 +26,13 @@
     },
   ]
 
-  const code = `const history = organizer.getHistory();`
+  const organizer = new Arrganizer(data);
+  organizer.sortByKey("age", "asc");
+  const history = organizer.getHistory();
+
+  const code = `const organizer = new Arrganizer(data);
+  organizer.sortByKey("age", "asc");
+  const history = organizer.getHistory();`
 </script>
 
 <MethodCall {call} id="gethistory" />
@@ -31,3 +43,6 @@
 <MethodArguments details={returns} />
 <h4>Example:</h4>
 <CodeBlock {code}/>
+
+<h4>Results:</h4>
+<JsonBlock data={history} />

@@ -12,7 +12,9 @@
   };
 </script>
 
-<button type="button" on:click={viewChange}>Table View</button>
+<button type="button" on:click={viewChange}>
+  {view === "table" ? "JSON View" : "Table View"}
+</button>
 {#if view==="table"}
   <MultiTable tables={result} />
 {:else}

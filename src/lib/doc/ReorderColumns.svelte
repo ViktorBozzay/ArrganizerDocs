@@ -1,7 +1,13 @@
 <script lang="ts">
+  import {Arrganizer} from "arrganizer";
+
   import CodeBlock from "../components/CodeBlock.svelte";
   import MethodArguments from "../components/MethodArguments.svelte";
   import MethodCall from "../components/MethodCall.svelte";
+  import JsonBlock from "../components/JSONBlock.svelte";
+  import ResultView from "../components/ResultView.svelte";
+
+  import {data} from "../mock/data";
 
   import type { CodeWordType } from "../types/CodeWordType";
 
@@ -27,7 +33,25 @@
     { arg: "addMissing", desc: "Whether to add missing columns at the end of each row (default is true).", type: "variable"},
   ];
 
-  const code = `organizer.reorderColumns(["age", "salary", "id"], true);`;
+  const arrganizer2 = new Arrganizer(data);
+  arrganizer2.reorderColumns(["age", "id"]);
+  const reordered = arrganizer2.getTables();
+  console.log(reordered);
+
+  const arrganizer = new Arrganizer(data);
+  arrganizer.reorderColumns(["age", "id"], false);
+  const reorderedOnlyGiven = arrganizer.getTables();
+  console.log(reorderedOnlyGiven);
+
+  const code1 = `  const arrganizer2 = new Arrganizer(data);
+  arrganizer2.reorderColumns(["age", "id"]);
+  const reordered = arrganizer2.getTables();
+  console.log(reordered);`;
+
+  const code2 = `  const arrganizer = new Arrganizer(data);
+  arrganizer.reorderColumns(["age", "id"], false);
+  const reorderedOnlyGiven = arrganizer.getTables();
+  console.log(reorderedOnlyGiven);`;
 </script>
 
 <MethodCall {call} id="reordercolumns" />
@@ -36,5 +60,16 @@
 </p>
 <h4>Parameters:</h4>
 <MethodArguments details={argumentum} />
-<h4>Example:</h4>
-<CodeBlock {code}/>
+
+<h4>Example #1:</h4>
+<CodeBlock code={code1}/>
+
+<h4>Results:</h4>
+<h5>console.log(reordered);</h5>
+<ResultView result={reordered} />
+
+<h4>Example #2:</h4>
+<CodeBlock code={code2}/>
+
+<h5>console.log(reorderedOnlyGiven);</h5>
+<ResultView result={reorderedOnlyGiven} />

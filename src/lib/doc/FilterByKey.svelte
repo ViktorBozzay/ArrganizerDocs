@@ -1,7 +1,13 @@
 <script lang="ts">
+  import {Arrganizer} from "arrganizer";
+
   import CodeBlock from "../components/CodeBlock.svelte";
   import MethodArguments from "../components/MethodArguments.svelte";
   import MethodCall from "../components/MethodCall.svelte";
+  import JsonBlock from "../components/JSONBlock.svelte";
+  import ResultView from "../components/ResultView.svelte";
+
+  import {data} from "../mock/data";
 
   import type { CodeWordType } from "../types/CodeWordType";
 
@@ -11,11 +17,14 @@
     { text: "key", type: "variable" },
     { text: ": ", type: "punctuation" },
     { text: "keyof", type: "keyword" },
-    { text: "Data[0]", type: "object" },
+    { text: "DataRow", type: "object" },
     { text: ", ", type: "punctuation" },
-    { text: "value", type: "variable" },
+    { text: "values", type: "variable" },
     { text: ": ", type: "punctuation" },
-    { text: "string | number", type: "keyword" },
+    { text: "DataRow", type: "object" },
+    { text: "[", type: "keyword" },
+    { text: "T", type: "object" },
+    { text: "][]", type: "keyword" },
     { text: "): ", type: "punctuation" },
     { text: "this", type: "keyword", },
   ]
@@ -25,7 +34,14 @@
     { arg: "value", desc: "The value to filter for.", type: "variable"},
   ];
 
-  const code = `organizer.filterByKey("age", "25");`;
+  const arrganizer = new Arrganizer(data);
+  arrganizer.filterByKey("age", [25, 22]);
+  const filteredAge = arrganizer.getTables();
+
+  const code = `  const arrganizer = new Arrganizer(data);
+  arrganizer.filterByKey("age", [25, 22]);
+  arrganizer.filterByKey("age", [25]);
+  const filteredAge = arrganizer.getTables();`;
 </script>
 
 <MethodCall {call} id="filterbykey" />
@@ -36,3 +52,6 @@
 <MethodArguments details={argumentum} />
 <h4>Example:</h4>
 <CodeBlock {code}/>
+
+<h4>Results:</h4>
+<ResultView result={filteredAge} />

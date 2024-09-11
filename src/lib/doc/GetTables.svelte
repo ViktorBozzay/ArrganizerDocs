@@ -5,7 +5,7 @@
   import MethodCall from "../components/MethodCall.svelte";
 
   import type { CodeWordType } from "../types/CodeWordType";
-  import {data} from "../mock"
+  import {data} from "../mock/data"
   import ResultView from "../components/ResultView.svelte";
 
   const argumentum = [
@@ -72,5 +72,6 @@
 <MethodArguments details={returns} />
 <h4>Example:</h4>
 <CodeBlock {code}/>
+
 <h4>Results:</h4>
 <ResultView result={tableWithSummary} />

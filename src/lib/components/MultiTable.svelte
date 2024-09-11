@@ -5,6 +5,6 @@
 </script>
 
 {#each tables as {table, title, summary}}
-  <h2>{title}</h2>
+  <h4>{title}</h4>
   <Table tableData={table} />
 {/each}

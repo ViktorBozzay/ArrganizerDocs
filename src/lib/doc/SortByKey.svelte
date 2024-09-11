@@ -1,7 +1,13 @@
 <script lang="ts">
+  import {Arrganizer} from "arrganizer";
+
   import CodeBlock from "../components/CodeBlock.svelte";
   import MethodArguments from "../components/MethodArguments.svelte";
   import MethodCall from "../components/MethodCall.svelte";
+  import JsonBlock from "../components/JSONBlock.svelte";
+  import ResultView from "../components/ResultView.svelte";
+
+  import {data} from "../mock/data";
 
   import type { CodeWordType } from "../types/CodeWordType";
 
@@ -27,7 +33,15 @@
     { arg: "ascending", desc: 'Optional boolean to specify sorting order (default: "asc" for ascending).', type: "variable"},
   ];
 
-  const code = `organizer.sortByKey("age");`;
+  const arrganizer = new Arrganizer(data);
+  arrganizer.sortByKey("age");
+  const sortedAge = arrganizer.getTables();
+  console.log(sortedAge);
+
+  const code = `  const arrganizer = new Arrganizer(data);
+  arrganizer.sortByKey("age");
+  const sortedAge = arrganizer.getTables();
+  console.log(sortedAge);`;
 </script>
 
 <MethodCall {call} id="sortbykey" />
@@ -38,3 +52,6 @@
 <MethodArguments details={argumentum} />
 <h4>Example:</h4>
 <CodeBlock {code}/>
+
+<h4>Results:</h4>
+<ResultView result={sortedAge} />

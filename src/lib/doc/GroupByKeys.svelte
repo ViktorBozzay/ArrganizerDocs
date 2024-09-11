@@ -1,7 +1,13 @@
 <script lang="ts">
+  import {Arrganizer} from "arrganizer";
+
   import CodeBlock from "../components/CodeBlock.svelte";
   import MethodArguments from "../components/MethodArguments.svelte";
   import MethodCall from "../components/MethodCall.svelte";
+  import JsonBlock from "../components/JSONBlock.svelte";
+  import ResultView from "../components/ResultView.svelte";
+
+  import {data} from "../mock/data";
 
   import type { CodeWordType } from "../types/CodeWordType";
 
@@ -21,7 +27,15 @@
     { arg: "keys", desc: "The keys to group by.", type: "variable"},
   ];
 
-  const code = `organizer.groupByKey(["id", "job"]);`;
+  const arrganizer = new Arrganizer(data);
+  arrganizer.groupByKeys(["age", "job"]);
+  const groupedAgeJob = arrganizer.getTables();
+  console.log(groupedAgeJob);
+
+  const code = `  const arrganizer = new Arrganizer(data);
+  arrganizer.groupByKeys(["age", "job"]);
+  const groupedAgeJob = arrganizer.getTables();
+  console.log(groupedAgeJob);`
 </script>
 
 <MethodCall {call} id="groupbykeys" />
@@ -32,3 +46,6 @@
 <MethodArguments details={argumentum} />
 <h4>Example:</h4>
 <CodeBlock {code}/>
+
+<h4>Results:</h4>
+<ResultView result={groupedAgeJob} />

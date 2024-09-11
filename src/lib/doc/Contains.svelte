@@ -1,7 +1,13 @@
 <script lang="ts">
+  import {Arrganizer} from "arrganizer";
+
   import CodeBlock from "../components/CodeBlock.svelte";
   import MethodArguments from "../components/MethodArguments.svelte";
   import MethodCall from "../components/MethodCall.svelte";
+  import JsonBlock from "../components/JSONBlock.svelte";
+  import ResultView from "../components/ResultView.svelte";
+
+  import {data} from "../mock/data";
 
   import type { CodeWordType } from "../types/CodeWordType";
 
@@ -25,7 +31,13 @@
     { arg: "value", desc: "The value to check for.", type: "variable"},
   ];
 
-  const code = `organizer.contains("age", "25");`;
+  const arrganizer = new Arrganizer(data);
+  arrganizer.contains("er");
+  const contains_eer = arrganizer.getTables();
+
+  const code = `  const arrganizer = new Arrganizer(data);
+  arrganizer.contains("er");
+  const contains_eer = arrganizer.getTables();`;
 </script>
 
 <MethodCall {call} id="contains" />
@@ -36,3 +48,6 @@
 <MethodArguments details={argumentum} />
 <h4>Example:</h4>
 <CodeBlock {code}/>
+
+<h4>Results:</h4>
+<ResultView result={contains_eer} />

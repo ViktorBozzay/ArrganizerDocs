@@ -7,7 +7,7 @@
   import MethodCall from "../components/MethodCall.svelte";
   import ResultView from "../components/ResultView.svelte";
 
-  import { data } from "../mock";
+  import { data } from "../mock/data";
 
   import type { CodeWordType } from "../types/CodeWordType";
 
@@ -99,21 +99,50 @@
 
   const arrganizer = new Arrganizer(data);
   const original = arrganizer.getTables();
+  console.log(original);
 
-    const code = `const arrganizer = new Arrganizer(data, options);
-const original = arrganizer.getTables();
-console.log(original);`
+    const code1 = `  const arrganizer = new Arrganizer(data);
+  const original = arrganizer.getTables();`
+
+  const headerDictionary = {
+      "dateOfBirth": "Date of Birth",
+      "age": "Age",
+      "salary": "Salary",
+      "job": "Job Title",
+      "name": "Worker",
+  };
+
+  const cellFormats = {
+    "salary": "usd",
+  };
+
+  const arrganizer2 = new Arrganizer(data, {
+    headerDictionary, cellFormats})
+  const translated = arrganizer2.getTables();
+  console.log(translated);
+
+  const code2 = ``
 </script>
 
 <h2 id="constructor">Constructor</h2>
-<MethodCall {call} id="constructor"/>
+<MethodCall {call} id="constructor-sub"/>
 
 <h4>Parameters:</h4>
 <MethodArguments details={argumentum} />
-<h4>Example:</h4>
-<p>This is an example data:</p>
+
+<h4>During the documentation used data</h4>
 <JsonBlock {data} />
+
+<h4>Example #1:</h4>
+
 <p>Creating a new Arrganizer class:</p>
-<CodeBlock {code}/>
-<h4>Result:</h4>
+<CodeBlock code={code1}/>
+
+<h4>Results:</h4>
 <ResultView result={original} />
+
+<h4>Example #2:</h4>
+<CodeBlock code={code2}/>
+
+<h4>Results:</h4>
+<ResultView result={translated} />

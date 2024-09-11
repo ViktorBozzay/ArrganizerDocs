@@ -1,7 +1,12 @@
 <script lang="ts">
+  import {Arrganizer} from "arrganizer";
+
   import CodeBlock from "../components/CodeBlock.svelte";
   import MethodArguments from "../components/MethodArguments.svelte";
   import MethodCall from "../components/MethodCall.svelte";
+  import JsonBlock from "../components/JSONBlock.svelte";
+
+  import {data} from "../mock/data";
 
   import type { CodeWordType } from "../types/CodeWordType";
 
@@ -19,7 +24,11 @@
     },
   ]
 
-  const code = `const originalData = organizer.getOriginalData();`
+  const organizer = new Arrganizer(data);
+  const original = organizer.getOriginalData();
+
+  const code = `  const organizer = new Arrganizer(data);
+  const original = organizer.getOriginalData();`
 </script>
 
 <MethodCall {call} id="getoriginaldata" />
@@ -30,3 +39,6 @@
 <MethodArguments details={returns} />
 <h4>Example:</h4>
 <CodeBlock {code}/>
+
+<h4>Results:</h4>
+<JsonBlock data={original} />

@@ -1,7 +1,13 @@
 <script lang="ts">
+  import {Arrganizer} from "arrganizer";
+
   import CodeBlock from "../components/CodeBlock.svelte";
   import MethodArguments from "../components/MethodArguments.svelte";
   import MethodCall from "../components/MethodCall.svelte";
+  import JsonBlock from "../components/JSONBlock.svelte";
+  import ResultView from "../components/ResultView.svelte";
+
+  import {data} from "../mock/data";
 
   import type { CodeWordType } from "../types/CodeWordType";
 
@@ -29,7 +35,15 @@
     { arg: "callback", desc: "The function that makes the modification on the value.", type: "function"},
   ];
 
-  const code = `organizer.modifyValue("salary", (salary) => salary * 2);`;
+  const arrganizer = new Arrganizer(data);
+  arrganizer.modifyValue("salary", (salary: number) => Math.ceil(salary * 1.1));
+  const raisedSalary = arrganizer.getTables();
+  console.log(raisedSalary);
+
+  const code = `  const arrganizer = new Arrganizer(data);
+  arrganizer.modifyValue("salary", (salary: number) => salary * 2);
+  const raisedSalary = arrganizer.getTables();
+  console.log(raisedSalary);`;
 </script>
 
 <MethodCall {call} id="modifyvalue" />
@@ -40,3 +54,6 @@
 <MethodArguments details={argumentum} />
 <h4>Example:</h4>
 <CodeBlock {code}/>
+
+<h4>Results:</h4>
+<ResultView result={raisedSalary} />
