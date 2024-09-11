@@ -44,6 +44,12 @@
     { text: "TableData[]", type: "object" },
   ]
 
+  const arrganizer = new Arrganizer(data);
+  const tableWithSummary = arrganizer.getTables({
+    total: true,
+    average: true,
+  });
+
   const code = `const arrganizer = new Arrganizer(data);
     const tableWithSummary = arrganizer.getTables({
       showSummary: {
@@ -53,13 +59,6 @@
     })
     console.log(tableWithSummary);
   });`
-
-  const arrganizer = new Arrganizer(data);
-  const tableWithSummary = arrganizer.getTables({
-    total: true,
-    average: true,
-  });
-
 </script>
 
 <MethodCall {call} id="gettables" />

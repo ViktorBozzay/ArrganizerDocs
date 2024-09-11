@@ -29,12 +29,12 @@
   const arrganizer = new Arrganizer(data);
   arrganizer.groupByKey("age");
   const groupedAge = arrganizer.getTables();
-  console.log(groupedAge);
+  // console.log(groupedAge);
 
-  const code = `  const arrganizer = new Arrganizer(data);
-  arrganizer.groupByKey("age");
-  const groupedAge = arrganizer.getTables();
-  console.log(groupedAge);`
+  const code = `const arrganizer = new Arrganizer(data);
+arrganizer.groupByKey("age");
+const groupedAge = arrganizer.getTables();
+console.log(groupedAge);`
 </script>
 
 <MethodCall {call} id="groupbykey" />

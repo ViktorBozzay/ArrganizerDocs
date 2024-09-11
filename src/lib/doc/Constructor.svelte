@@ -24,8 +24,20 @@
       children: [
         {
           arg: "headerDictionary",
-          desc: "An optional dictionary for translating header keys.",
+          desc: "An optional dictionary for translating header keys. Object, where the key is the original key and the value is the translated text.",
           type: "variable",
+          children: [
+            {
+              arg: "[key]: string",
+              desc: "A key of the original data",
+              type: "variable",
+            },
+            {
+              arg: "translated text",
+              desc: "The text that replaces the key of the data.",
+              type: "variable",
+            },
+          ]
         },
         {
           arg: "historySize",
@@ -34,12 +46,24 @@
         },
         {
           arg: "cellFormats",
-          desc: "An optional mapping of keys to cell formatters.",
+          desc: "An optional mapping of keys to cell formatters. Object that describes which columns should be formatted. Object, where the key is the original key and the value is the formatter name or a custom formatter function.",
           type: "variable",
+          children: [
+            {
+              arg: "[key]: string",
+              desc: "A key of the original data",
+              type: "variable",
+            },
+            {
+              arg: "formatter name | custom formatter function",
+              desc: "The name of the built-in formatter or a custom formatter function.",
+              type: "variable",
+            },
+          ]
         },
         {
           arg: "locale",
-          desc: "Locale used for formatting (default: &quot;en&quot;).",
+          desc: 'Locale used for formatting (default: "en").',
           type: "variable",
         },
       ]
@@ -99,10 +123,11 @@
 
   const arrganizer = new Arrganizer(data);
   const original = arrganizer.getTables();
-  console.log(original);
+  // console.log(original);
 
-    const code1 = `  const arrganizer = new Arrganizer(data);
-  const original = arrganizer.getTables();`
+    const code1 = `const arrganizer = new Arrganizer(data);
+const original = arrganizer.getTables();
+console.log(original);`
 
   const headerDictionary = {
       "dateOfBirth": "Date of Birth",
@@ -114,14 +139,37 @@
 
   const cellFormats = {
     "salary": "usd",
+    "name": (name: string) => {
+      const [first, last] = name.split(" ");
+      return last.toUpperCase() + ", " + first;
+    },
   };
 
   const arrganizer2 = new Arrganizer(data, {
     headerDictionary, cellFormats})
   const translated = arrganizer2.getTables();
-  console.log(translated);
+  // console.log(translated);
 
-  const code2 = ``
+  const code2 = `const headerDictionary = {
+  "dateOfBirth": "Date of Birth",
+  "age": "Age",
+  "salary": "Salary",
+  "job": "Job Title",
+  "name": "Worker",
+};
+
+const cellFormats = {
+  "salary": "usd",
+  "name": (name: string) => {
+    const [first, last] = name.split(" ");
+    return last.toUpperCase() + ", " + first;
+  },
+};
+
+const arrganizer2 = new Arrganizer(data, {
+  headerDictionary, cellFormats})
+const translated = arrganizer2.getTables();
+console.log(translated);`
 </script>
 
 <h2 id="constructor">Constructor</h2>

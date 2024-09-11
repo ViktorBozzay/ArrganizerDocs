@@ -29,12 +29,11 @@
   const arrganizer = new Arrganizer(data);
   arrganizer.removeKey("age");
   const removedAge = arrganizer.getTables();
-  console.log(removedAge);
+  // console.log(removedAge);
 
-  const code = `  const arrganizer = new Arrganizer(data);
-  arrganizer.removeKey("age");
-  const removedAge = arrganizer.getTables();
-  console.log(removedAge);`
+  const code = `const arrganizer = new Arrganizer(data);
+arrganizer.removeKey("age");
+const remove`
 </script>
 
 <MethodCall {call} id="removekey" />

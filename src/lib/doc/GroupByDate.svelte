@@ -37,9 +37,12 @@
   const arrganizer = new Arrganizer(data);
   arrganizer.groupByDate("YEAR", "dateOfBirth");
   const groupedDateOfBirth = arrganizer.getTables();
-  console.log(groupedDateOfBirth);
+  // console.log(groupedDateOfBirth);
 
-  const code = `organizer.groupByDate("dateOfBirth", "YEAR");`;
+  const code = `const arrganizer = new Arrganizer(data);
+arrganizer.groupByDate("YEAR", "dateOfBirth");
+const groupedDateOfBirth = arrganizer.getTables();
+console.log(groupedDateOfBirth);`;
 </script>
 
 <MethodCall {call} id="groupbydate" />

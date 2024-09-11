@@ -36,22 +36,22 @@
   const arrganizer2 = new Arrganizer(data);
   arrganizer2.reorderColumns(["age", "id"]);
   const reordered = arrganizer2.getTables();
-  console.log(reordered);
+  // console.log(reordered);
+
+  const code1 = `const arrganizer2 = new Arrganizer(data);
+arrganizer2.reorderColumns(["age", "id"]);
+const reordered = arrganizer2.getTables();
+console.log(reordered);`;
 
   const arrganizer = new Arrganizer(data);
   arrganizer.reorderColumns(["age", "id"], false);
   const reorderedOnlyGiven = arrganizer.getTables();
-  console.log(reorderedOnlyGiven);
+  // console.log(reorderedOnlyGiven);
 
-  const code1 = `  const arrganizer2 = new Arrganizer(data);
-  arrganizer2.reorderColumns(["age", "id"]);
-  const reordered = arrganizer2.getTables();
-  console.log(reordered);`;
-
-  const code2 = `  const arrganizer = new Arrganizer(data);
-  arrganizer.reorderColumns(["age", "id"], false);
-  const reorderedOnlyGiven = arrganizer.getTables();
-  console.log(reorderedOnlyGiven);`;
+  const code2 = `const arrganizer = new Arrganizer(data);
+arrganizer.reorderColumns(["age", "id"], false);
+const reorderedOnlyGiven = arrganizer.getTables();
+console.log(reorderedOnlyGiven);`;
 </script>
 
 <MethodCall {call} id="reordercolumns" />

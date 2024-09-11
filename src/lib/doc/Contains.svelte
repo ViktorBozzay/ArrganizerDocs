@@ -34,10 +34,12 @@
   const arrganizer = new Arrganizer(data);
   arrganizer.contains("er");
   const contains_eer = arrganizer.getTables();
+  // console.log(contains_eer);
 
-  const code = `  const arrganizer = new Arrganizer(data);
-  arrganizer.contains("er");
-  const contains_eer = arrganizer.getTables();`;
+  const code = `const arrganizer = new Arrganizer(data);
+arrganizer.contains("er");
+const contains_eer = arrganizer.getTables();
+console.log(contains_eer);`;
 </script>
 
 <MethodCall {call} id="contains" />

@@ -30,12 +30,12 @@
   const arrganizer = new Arrganizer(data);
   arrganizer.groupByKeys(["age", "job"]);
   const groupedAgeJob = arrganizer.getTables();
-  console.log(groupedAgeJob);
+  // console.log(groupedAgeJob);
 
-  const code = `  const arrganizer = new Arrganizer(data);
-  arrganizer.groupByKeys(["age", "job"]);
-  const groupedAgeJob = arrganizer.getTables();
-  console.log(groupedAgeJob);`
+  const code = `const arrganizer = new Arrganizer(data);
+arrganizer.groupByKeys(["age", "job"]);
+const groupedAgeJob = arrganizer.getTables();
+console.log(groupedAgeJob);`
 </script>
 
 <MethodCall {call} id="groupbykeys" />

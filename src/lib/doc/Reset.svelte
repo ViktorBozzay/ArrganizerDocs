@@ -20,18 +20,18 @@
   const arrganizer = new Arrganizer(data);
   arrganizer.filterByKey("age", [25, 22]);
   const tables = arrganizer.getTables();
-  console.log(tables);
+  // console.log(tables);
   arrganizer.reset();
   const resetTables = arrganizer.getTables();
-  console.log(resetTables);
+  // console.log(resetTables);
 
-  const code = `  const arrganizer = new Arrganizer(data);
-  arrganizer.filterByKey("age", [25, 22]);
-  const tables = arrganizer.getTables();
-  console.log(tables);
-  arrganizer.reset();
-  const resetTables = arrganizer.getTables();
-  console.log(resetTables);`
+  const code = `const arrganizer = new Arrganizer(data);
+arrganizer.filterByKey("age", [25, 22]);
+const tables = arrganizer.getTables();
+console.log(tables);
+arrganizer.reset();
+const resetTables = arrganizer.getTables();
+console.log(resetTables);`
 </script>
 
 <MethodCall {call} id="reset" />

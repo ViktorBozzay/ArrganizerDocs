@@ -37,11 +37,13 @@
   const arrganizer = new Arrganizer(data);
   arrganizer.filterByKey("age", [25, 22]);
   const filteredAge = arrganizer.getTables();
+  // console.log(filteredAge);
 
-  const code = `  const arrganizer = new Arrganizer(data);
-  arrganizer.filterByKey("age", [25, 22]);
-  arrganizer.filterByKey("age", [25]);
-  const filteredAge = arrganizer.getTables();`;
+  const code = `const arrganizer = new Arrganizer(data);
+arrganizer.filterByKey("age", [25, 22]);
+arrganizer.filterByKey("age", [25]);
+const filteredAge = arrganizer.getTables();
+console.log(filteredAge);`;
 </script>
 
 <MethodCall {call} id="filterbykey" />

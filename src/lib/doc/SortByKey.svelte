@@ -36,12 +36,12 @@
   const arrganizer = new Arrganizer(data);
   arrganizer.sortByKey("age");
   const sortedAge = arrganizer.getTables();
-  console.log(sortedAge);
+  // console.log(sortedAge);
 
-  const code = `  const arrganizer = new Arrganizer(data);
-  arrganizer.sortByKey("age");
-  const sortedAge = arrganizer.getTables();
-  console.log(sortedAge);`;
+  const code = `const arrganizer = new Arrganizer(data);
+arrganizer.sortByKey("age");
+const sortedAge = arrganizer.getTables();
+console.log(sortedAge);`;
 </script>
 
 <MethodCall {call} id="sortbykey" />

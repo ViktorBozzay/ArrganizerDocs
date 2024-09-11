@@ -38,12 +38,12 @@
   const arrganizer = new Arrganizer(data);
   arrganizer.modifyValue("salary", (salary: number) => Math.ceil(salary * 1.1));
   const raisedSalary = arrganizer.getTables();
-  console.log(raisedSalary);
+  // console.log(raisedSalary);
 
-  const code = `  const arrganizer = new Arrganizer(data);
-  arrganizer.modifyValue("salary", (salary: number) => salary * 2);
-  const raisedSalary = arrganizer.getTables();
-  console.log(raisedSalary);`;
+  const code = `const arrganizer = new Arrganizer(data);
+arrganizer.modifyValue("salary", (salary: number) => Math.ceil(salary * 1.1));
+const raisedSalary = arrganizer.getTables();
+console.log(raisedSalary);`;
 </script>
 
 <MethodCall {call} id="modifyvalue" />

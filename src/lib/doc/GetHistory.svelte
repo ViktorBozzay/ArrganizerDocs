@@ -26,13 +26,15 @@
     },
   ]
 
-  const organizer = new Arrganizer(data);
-  organizer.sortByKey("age", "asc");
-  const history = organizer.getHistory();
+  const arrganizer = new Arrganizer(data);
+  arrganizer.sortByKey("age", "asc");
+  const history = arrganizer.getHistory();
+  // console.log(history);
 
-  const code = `const organizer = new Arrganizer(data);
-  organizer.sortByKey("age", "asc");
-  const history = organizer.getHistory();`
+  const code = `const arrganizer = new Arrganizer(data);
+arrganizer.sortByKey("age", "asc");
+const history = arrganizer.getHistory();
+console.log(history);`
 </script>
 
 <MethodCall {call} id="gethistory" />

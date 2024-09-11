@@ -21,19 +21,19 @@
   arrganizer.filterByKey("age", [25, 22]);
   arrganizer.filterByKey("age", [25]);
   const tables = arrganizer.getTables();
-  console.log(tables);
+  // console.log(tables);
   arrganizer.undo();
   const undoTables = arrganizer.getTables();
-  console.log(undoTables);
+  // console.log(undoTables);
 
-  const code = `  const arrganizer = new Arrganizer(data);
-  arrganizer.filterByKey("age", [25, 22]);
-  arrganizer.filterByKey("age", [25]);
-  const tables = arrganizer.getTables();
-  console.log(tables);
-  arrganizer.undo();
-  const undoTables = arrganizer.getTables();
-  console.log(undoTables);`
+  const code = `const arrganizer = new Arrganizer(data);
+arrganizer.filterByKey("age", [25, 22]);
+arrganizer.filterByKey("age", [25]);
+const tables = arrganizer.getTables();
+console.log(tables);
+arrganizer.undo();
+const undoTables = arrganizer.getTables();
+console.log(undoTables);`
 </script>
 
 <MethodCall {call} id="undo" />

@@ -23,19 +23,19 @@
   arrganizer.undo();
   const undoTables = arrganizer.getTables();
   arrganizer.redo();
-  console.log(undoTables);
+  // console.log(undoTables);
   const redoTables = arrganizer.getTables();
-  console.log(redoTables);
+  // console.log(redoTables);
 
-  const code = `  const arrganizer = new Arrganizer(data);
-  arrganizer.filterByKey("age", [25, 22]);
-  arrganizer.filterByKey("age", [25]);
-  arrganizer.undo();
-  const undoTables = arrganizer.getTables();
-  arrganizer.redo();
-  console.log(undoTables);
-  const redoTables = arrganizer.getTables();
-  console.log(redoTables);`
+  const code = `const arrganizer = new Arrganizer(data);
+arrganizer.filterByKey("age", [25, 22]);
+arrganizer.filterByKey("age", [25]);
+arrganizer.undo();
+const undoTables = arrganizer.getTables();
+arrganizer.redo();
+console.log(undoTables);
+const redoTables = arrganizer.getTables();
+console.log(redoTables);`
 </script>
 
 <MethodCall {call} id="redo" />

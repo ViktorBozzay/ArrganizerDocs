@@ -26,7 +26,6 @@
     { text: " = ", type: "punctuation" },
     { text: "frequency", type: "string" },
     { text: ", ", type: "punctuation" },
-
     { text: "aggregateKeys", type: "variable" },
     { text: ": ", type: "punctuation" },
     { text: "(", type: "punctuation" },
@@ -47,12 +46,12 @@
   const arrganizer = new Arrganizer(data);
   arrganizer.frequencyByKeysValue(["age"]);
   const calculatedAgeGroups = arrganizer.getTables();
-  console.log(calculatedAgeGroups);
+  // console.log(calculatedAgeGroups);
 
-  const code = `  const arrganizer = new Arrganizer(data);
-  arrganizer.frequencyByKeysValue(["age"]);
-  const calculatedAgeGroups = arrganizer.getTables();
-  console.log(calculatedAgeGroups);`
+  const code = `const arrganizer = new Arrganizer(data);
+arrganizer.frequencyByKeysValue(["age"]);
+const calculatedAgeGroups = arrganizer.getTables();
+console.log(calculatedAgeGroups);`
 </script>
 
 <MethodCall {call} id="frequencybykeysvalue" />

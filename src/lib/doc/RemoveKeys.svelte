@@ -31,12 +31,12 @@
   const arrganizer = new Arrganizer(data);
   arrganizer.removeKeys(["id", "age", "dateOfBirth"]);
   const removedIdAgeDateOfBirth = arrganizer.getTables();
-  console.log(removedIdAgeDateOfBirth);
+  // console.log(removedIdAgeDateOfBirth);
 
-  const code = `  const arrganizer = new Arrganizer(data);
-  arrganizer.removeKeys(["id", "age", "dateOfBirth"]);
-  const removedIdAgeDateOfBirth = arrganizer.getTables();
-  console.log(removedIdAgeDateOfBirth);`
+  const code = `const arrganizer = new Arrganizer(data);
+arrganizer.removeKeys(["id", "age", "dateOfBirth"]);
+const removedIdAgeDateOfBirth = arrganizer.getTables();
+console.log(removedIdAgeDateOfBirth);`
 </script>
 
 <MethodCall {call} id="removekeys" />

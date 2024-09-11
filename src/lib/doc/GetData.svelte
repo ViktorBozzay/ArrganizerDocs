@@ -26,9 +26,11 @@
 
   const organizer = new Arrganizer(data);
   const dataSet = organizer.getData();
+  // console.log(dataSet);
 
   const code = `const organizer = new Arrganizer(data);
-  const dataSet = organizer.getData();`
+const dataSet = organizer.getData();
+console.log(dataSet);`
 </script>
 
 <MethodCall {call} id="getdata"/>

@@ -24,11 +24,13 @@
     },
   ]
 
-  const organizer = new Arrganizer(data);
-  const original = organizer.getOriginalData();
+  const arrganizer = new Arrganizer(data);
+  const original = arrganizer.getOriginalData();
+  // console.log(original);
 
-  const code = `  const organizer = new Arrganizer(data);
-  const original = organizer.getOriginalData();`
+  const code = `const arrganizer = new Arrganizer(data);
+const original = arrganizer.getOriginalData();
+console.log(original);`
 </script>
 
 <MethodCall {call} id="getoriginaldata" />
