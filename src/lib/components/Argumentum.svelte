@@ -1,9 +1,11 @@
 <script lang="ts">
   import type { CodeWordType } from "../types/CodeWordType";
+  import type { ArgumentumDetailsType } from "./types/ArgumentumDetailsType";
 
   export let arg;
   export let desc;
   export let type: CodeWordType;
+  export let children: ArgumentumDetailsType[] = [];
 </script>
 
 <span class="codeBlock">
