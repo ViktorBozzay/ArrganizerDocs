@@ -16,7 +16,7 @@
     { text: "(", type: "punctuation" },
     { text: "key", type: "variable" },
     { text: ": ", type: "punctuation" },
-    { text: "keyof", type: "keyword" },
+    { text: "keyof ", type: "keyword" },
     { text: "DataRow", type: "object" },
     { text: "): ", type: "punctuation" },
     { text: "this", type: "keyword", },
@@ -36,7 +36,7 @@ arrganizer.removeKey("age");
 const remove`
 </script>
 
-<MethodCall {call} id="removekey" />
+<MethodCall {call} id="removekey" title="Remove Key" />
 <p>
   Removes a specified key from the data.
 </p>

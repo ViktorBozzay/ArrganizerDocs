@@ -38,7 +38,7 @@ const redoTables = arrganizer.getTables();
 console.log(redoTables);`
 </script>
 
-<MethodCall {call} id="redo" />
+<MethodCall {call} id="redo" title="Redo"/>
 <p>
   Redo steps forward in the history to the next state (if there is a next).
 </p>

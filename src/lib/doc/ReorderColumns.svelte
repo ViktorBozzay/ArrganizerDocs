@@ -16,7 +16,7 @@
     { text: "(", type: "punctuation" },
     { text: "columnOrder", type: "variable" },
     { text: ": ", type: "punctuation" },
-    { text: "keyof", type: "keyword" },
+    { text: "keyof ", type: "keyword" },
     { text: "DataRow", type: "object" },
     { text: ", ", type: "punctuation" },
     { text: "addMissing", type: "variable" },
@@ -54,7 +54,7 @@ const reorderedOnlyGiven = arrganizer.getTables();
 console.log(reorderedOnlyGiven);`;
 </script>
 
-<MethodCall {call} id="reordercolumns" />
+<MethodCall {call} id="reordercolumns" title="Reorder Columns" />
 <p>
   Reorders the columns of the data rows according to the specified column order. If `addMissing` is true, missing columns will be added to the end of each row in their original order.
 </p>

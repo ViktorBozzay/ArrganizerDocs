@@ -16,7 +16,7 @@
     { text: "(", type: "punctuation" },
     { text: "key", type: "variable" },
     { text: ": ", type: "punctuation" },
-    { text: "keyof", type: "keyword" },
+    { text: "keyof ", type: "keyword" },
     { text: "DataRow", type: "object" },
     { text: "): ", type: "punctuation" },
     { text: "this", type: "keyword", },
@@ -45,7 +45,7 @@ const groupedDateOfBirth = arrganizer.getTables();
 console.log(groupedDateOfBirth);`;
 </script>
 
-<MethodCall {call} id="groupbydate" />
+<MethodCall {call} id="groupbydate" title="Group By Date" />
 <p>
   Groups the data by a specified date key in specified time interval.
 </p>

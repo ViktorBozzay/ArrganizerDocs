@@ -33,7 +33,7 @@ const dataSet = organizer.getData();
 console.log(dataSet);`
 </script>
 
-<MethodCall {call} id="getdata"/>
+<MethodCall {call} id="getdata" title="Get Data"/>
 <p>
   Returns the current data set.
 </p>

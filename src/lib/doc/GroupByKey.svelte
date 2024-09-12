@@ -16,7 +16,7 @@
     { text: "(", type: "punctuation" },
     { text: "key", type: "variable" },
     { text: ": ", type: "punctuation" },
-    { text: "keyof", type: "keyword" },
+    { text: "keyof ", type: "keyword" },
     { text: "DataRow", type: "object" },
     { text: "): ", type: "punctuation" },
     { text: "this", type: "keyword", },
@@ -37,7 +37,7 @@ const groupedAge = arrganizer.getTables();
 console.log(groupedAge);`
 </script>
 
-<MethodCall {call} id="groupbykey" />
+<MethodCall {call} id="groupbykey"  title="Group By Key"/>
 <p>
   Removes a specified key from the data.
 </p>

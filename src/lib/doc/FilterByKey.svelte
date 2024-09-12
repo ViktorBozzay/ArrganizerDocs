@@ -16,7 +16,7 @@
     { text: "(", type: "punctuation" },
     { text: "key", type: "variable" },
     { text: ": ", type: "punctuation" },
-    { text: "keyof", type: "keyword" },
+    { text: "keyof ", type: "keyword" },
     { text: "DataRow", type: "object" },
     { text: ", ", type: "punctuation" },
     { text: "values", type: "variable" },
@@ -46,7 +46,7 @@ const filteredAge = arrganizer.getTables();
 console.log(filteredAge);`;
 </script>
 
-<MethodCall {call} id="filterbykey" />
+<MethodCall {call} id="filterbykey" title="Filter By Key"/>
 <p>
   Filters the data by a specified key and value.
 </p>

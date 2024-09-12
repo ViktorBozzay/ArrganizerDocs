@@ -16,7 +16,7 @@
     { text: "(", type: "punctuation" },
     { text: "key", type: "variable" },
     { text: ": ", type: "punctuation" },
-    { text: "keyof", type: "keyword" },
+    { text: "keyof ", type: "keyword" },
     { text: "DataRow", type: "object" },
     { text: ", ", type: "punctuation" },
     { text: "direction", type: "variable" },
@@ -44,7 +44,7 @@ const sortedAge = arrganizer.getTables();
 console.log(sortedAge);`;
 </script>
 
-<MethodCall {call} id="sortbykey" />
+<MethodCall {call} id="sortbykey" title="Sort By Key" />
 <p>
   Sorts the data by a specified key.
 </p>

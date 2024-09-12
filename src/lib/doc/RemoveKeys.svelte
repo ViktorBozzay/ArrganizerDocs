@@ -16,7 +16,7 @@
     { text: "(", type: "punctuation" },
     { text: "key", type: "variable" },
     { text: ": (", type: "punctuation" },
-    { text: "keyof", type: "keyword" },
+    { text: "keyof ", type: "keyword" },
     { text: "DataRow", type: "object" },
     { text: ")[]", type: "punctuation" },
     { text: "): ", type: "punctuation" },
@@ -39,7 +39,7 @@ const removedIdAgeDateOfBirth = arrganizer.getTables();
 console.log(removedIdAgeDateOfBirth);`
 </script>
 
-<MethodCall {call} id="removekeys" />
+<MethodCall {call} id="removekeys" title="Remove Keys" />
 <p>
   Removes a specified keys from the data.
 </p>

@@ -33,7 +33,7 @@ const original = arrganizer.getOriginalData();
 console.log(original);`
 </script>
 
-<MethodCall {call} id="getoriginaldata" />
+<MethodCall {call} id="getoriginaldata" title="Get Original Data" />
 <p>
   The original data set.
 </p>

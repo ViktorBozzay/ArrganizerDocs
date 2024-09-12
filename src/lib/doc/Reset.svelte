@@ -34,7 +34,7 @@ const resetTables = arrganizer.getTables();
 console.log(resetTables);`
 </script>
 
-<MethodCall {call} id="reset" />
+<MethodCall {call} id="reset" title="Reset" />
 <p>
   Resets the data to its original state.
 </p>

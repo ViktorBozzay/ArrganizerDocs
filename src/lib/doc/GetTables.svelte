@@ -61,7 +61,7 @@
   });`
 </script>
 
-<MethodCall {call} id="gettables" />
+<MethodCall {call} id="gettables" title="Get Tables" />
 <p>
   Returns the current data sets as tables, optionally including summary data.
 </p>

@@ -21,6 +21,7 @@
   import FrequencyByKeysValue from "./FrequencyByKeysValue.svelte";
   import ReorderColumns from "./ReorderColumns.svelte";
   import Redo from "./Redo.svelte";
+  import MergeColumns from "./MergeColumns.svelte";
 </script>
 
 <div class="content">
@@ -48,6 +49,7 @@
       <ModifyValue />
       <SortByKey />
       <FrequencyByKeysValue />
+      <MergeColumns />
       <ReorderColumns />
       <Reset />
       <Undo />

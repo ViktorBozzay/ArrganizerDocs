@@ -3,10 +3,22 @@
 
   export let call: { type: CodeWordType, text: string}[]
   export let id: string;
+  export let title: string = "";
 </script>
 
-<h3 {id} class="codeBlock">
+{#if title !== ""}
+  <h3 {id}>{title}</h3>
+{/if}
+<p class="codeBlock">
   {#each call as part}
     <code class={part.type}>{part.text}</code>
   {/each}
-</h3>
+</p>
+
+<style>
+  p {
+    padding: 0 0.5rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+</style>

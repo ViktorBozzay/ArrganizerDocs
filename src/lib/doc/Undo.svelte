@@ -36,7 +36,7 @@ const undoTables = arrganizer.getTables();
 console.log(undoTables);`
 </script>
 
-<MethodCall {call} id="undo" />
+<MethodCall {call} id="undo" title="Undo" />
 <p>
   Undo steps back in the history to the previous state.
 </p>

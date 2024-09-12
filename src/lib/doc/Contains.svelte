@@ -16,7 +16,7 @@
     { text: "(", type: "punctuation" },
     { text: "key", type: "variable" },
     { text: ": ", type: "punctuation" },
-    { text: "keyof", type: "keyword" },
+    { text: "keyof ", type: "keyword" },
     { text: "Data[0]", type: "object" },
     { text: ", ", type: "punctuation" },
     { text: "value", type: "variable" },
@@ -42,7 +42,7 @@ const contains_eer = arrganizer.getTables();
 console.log(contains_eer);`;
 </script>
 
-<MethodCall {call} id="contains" />
+<MethodCall {call} id="contains"  title="Contains"/>
 <p>
   Filters the rows where the column values contains the given `value`.
 </p>

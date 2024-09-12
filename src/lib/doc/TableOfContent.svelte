@@ -18,6 +18,7 @@
       <li><a href="#modifyvalue">modifyValue</a></li>
       <li><a href="#sortbykey">sortByKey</a></li>
       <li><a href="#frequencybykeysvalue">frequencyByKeysValue</a></li>
+      <li><a href="#mergecolumns">mergeColumns</a></li>
       <li><a href="#reordercolumns">reorderColumns</a></li>
       <li><a href="#reset">reset</a></li>
       <li><a href="#undo">undo</a></li>

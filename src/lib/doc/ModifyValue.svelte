@@ -16,7 +16,7 @@
     { text: "(", type: "punctuation" },
     { text: "key", type: "variable" },
     { text: ": ", type: "punctuation" },
-    { text: "keyof", type: "keyword" },
+    { text: "keyof ", type: "keyword" },
     { text: "DataRow", type: "object" },
     { text: ", ", type: "punctuation" },
     { text: "callback", type: "function" },
@@ -46,7 +46,7 @@ const raisedSalary = arrganizer.getTables();
 console.log(raisedSalary);`;
 </script>
 
-<MethodCall {call} id="modifyvalue" />
+<MethodCall {call} id="modifyvalue" title="Modify Value" />
 <p>
   Modifies the value for a specific key in the data.
 </p>

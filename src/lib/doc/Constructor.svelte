@@ -173,7 +173,7 @@ console.log(translated);`
 </script>
 
 <h2 id="constructor">Constructor</h2>
-<MethodCall {call} id="constructor-sub"/>
+<MethodCall {call} id="constructor-sub" title=""/>
 
 <h4>Parameters:</h4>
 <MethodArguments details={argumentum} />

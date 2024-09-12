@@ -37,7 +37,7 @@ const history = arrganizer.getHistory();
 console.log(history);`
 </script>
 
-<MethodCall {call} id="gethistory" />
+<MethodCall {call} id="gethistory" title="Get History" />
 <p>
   Returns the history of operations performed on the data.
 </p>

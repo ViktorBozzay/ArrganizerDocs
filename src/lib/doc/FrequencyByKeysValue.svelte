@@ -17,7 +17,7 @@
     { text: "keys", type: "variable" },
     { text: ": ", type: "punctuation" },
     { text: "(", type: "punctuation" },
-    { text: "keyof", type: "keyword" },
+    { text: "keyof ", type: "keyword" },
     { text: "DataRow", type: "object" },
     { text: ")[], ", type: "punctuation" },
     { text: "frequencyKey", type: "variable" },
@@ -29,7 +29,7 @@
     { text: "aggregateKeys", type: "variable" },
     { text: ": ", type: "punctuation" },
     { text: "(", type: "punctuation" },
-    { text: "keyof", type: "keyword" },
+    { text: "keyof ", type: "keyword" },
     { text: "DataRow", type: "object" },
     { text: ")[]", type: "punctuation" },
     { text: " = []", type: "punctuation" },
@@ -54,7 +54,7 @@ const calculatedAgeGroups = arrganizer.getTables();
 console.log(calculatedAgeGroups);`
 </script>
 
-<MethodCall {call} id="frequencybykeysvalue" />
+<MethodCall {call} id="frequencybykeysvalue" title="Frequency By Keys Value" />
 <p>
   Calculates the frequency of each value for the specified keys, using the frequencyKey. Optionally, it can also aggregate additional values provided as an array in the aggregatesKey.
 </p>
