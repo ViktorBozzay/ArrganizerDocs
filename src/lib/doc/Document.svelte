@@ -110,12 +110,22 @@
   }
   .decor {
     width: 30%;
+    min-width: 232px;
+    height: 232px;
     border-radius: 1rem;
     overflow: hidden;
     aspect-ratio: 1/1;
     box-shadow: 1px 2px 5px darkolivegreen;
   }
+
+  .decor:hover img {
+    transform: scale(1.05);
+  }
   .decor img {
+    transform: scale(1);
+    transform-origin: center center;
     width: 100%;
+    aspect-ratio: 1/1;
+    transition: all 0.5s ease;
   }
 </style>

@@ -80,10 +80,6 @@
       type: "object",
     },
     {
-      text: "Arrganizer",
-      type: "object",
-    },
-    {
       text: "(",
       type: "punctuation"
     },
