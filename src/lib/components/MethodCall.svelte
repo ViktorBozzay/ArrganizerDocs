@@ -21,4 +21,7 @@
     font-weight: 700;
     font-size: 1.25rem;
   }
+  code {
+    padding: 0px 3px;
+  }
 </style>
