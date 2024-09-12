@@ -12,7 +12,7 @@
   import type { CodeWordType } from "../types/CodeWordType";
 
   const call: { type: CodeWordType, text: string}[] = [
-    { text: "removeKeys", type: "function",},
+    { text: "keepKeys", type: "function",},
     { text: "(", type: "punctuation" },
     { text: "keys", type: "variable" },
     { text: ": (", type: "punctuation" },
@@ -24,24 +24,24 @@
   ]
 
   const argumentum = [
-    { arg: "keys", desc: "The keys to remove.", type: "variable"},
+    { arg: "keys", desc: "The keys to keep. All other keys will be removed.", type: "variable"},
   ];
 
 
   const arrganizer = new Arrganizer(data);
-  arrganizer.removeKeys(["id", "age", "dateOfBirth"]);
+  arrganizer.keepKeys(["id", "age", "dateOfBirth"]);
   const removedIdAgeDateOfBirth = arrganizer.getTables();
   // console.log(removedIdAgeDateOfBirth);
 
   const code = `const arrganizer = new Arrganizer(data);
-arrganizer.removeKeys(["id", "age", "dateOfBirth"]);
+arrganizer.keepKeys(["id", "age", "dateOfBirth"]);
 const removedIdAgeDateOfBirth = arrganizer.getTables();
 console.log(removedIdAgeDateOfBirth);`
 </script>
 
-<MethodCall {call} id="removekeys" title="Remove Keys" />
+<MethodCall {call} id="keepkeys" title="Keep Keys" />
 <p>
-  Removes a specified keys from the data.
+  The keys to retain. All other keys will be removed.
 </p>
 <h4>Parameters:</h4>
 <MethodArguments details={argumentum} />

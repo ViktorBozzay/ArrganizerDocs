@@ -22,6 +22,7 @@
   import ReorderColumns from "./ReorderColumns.svelte";
   import Redo from "./Redo.svelte";
   import MergeColumns from "./MergeColumns.svelte";
+  import KeepKeys from "./KeepKeys.svelte";
 </script>
 
 <div class="content">
@@ -41,6 +42,7 @@
       <GetOriginalData />
       <RemoveKey />
       <RemoveKeys />
+      <KeepKeys />
       <GroupByDate />
       <GroupByKey />
       <GroupByKeys />

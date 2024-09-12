@@ -10,6 +10,7 @@
       <li><a href="#getoriginaldata">getOriginalData</a></li>
       <li><a href="#removekey">removeKey</a></li>
       <li><a href="#removekeys">removeKeys</a></li>
+      <li><a href="#keepkeys">keepKeys</a></li>
       <li><a href="#groupbydate">groupByDate</a></li>
       <li><a href="#groupbykey">groupByKey</a></li>
       <li><a href="#groupbykeys">groupByKeys</a></li>
