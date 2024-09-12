@@ -31,7 +31,14 @@
   </div>
   <div class="right">
     <div class="doc">
-      <Introduction />
+      <div class="header">
+        <div class="decor">
+          <img src="./decor1.webp" alt="decor" />
+        </div>
+        <div class="intro">
+          <Introduction />
+        </div>
+      </div>
       <Installation />
       <Constructor />
 
@@ -92,5 +99,23 @@
     margin: auto 1rem;
     min-width: 500px;
     width: 80%;
+  }
+
+  .header {
+    display: flex;
+    gap: 5%;
+  }
+  .title {
+    width: 65%;
+  }
+  .decor {
+    width: 30%;
+    border-radius: 1rem;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    box-shadow: 1px 2px 5px darkolivegreen;
+  }
+  .decor img {
+    width: 100%;
   }
 </style>
