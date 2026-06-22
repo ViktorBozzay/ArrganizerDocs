@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {Arrganizer} from "arrganizer";
+  import {Arrganizer} from "data-arrganizer";
 
   import CodeBlock from "../components/CodeBlock.svelte";
   import MethodArguments from "../components/MethodArguments.svelte";
@@ -33,7 +33,8 @@
 
   const code = `const arrganizer = new Arrganizer(data);
 arrganizer.removeKey("age");
-const remove`
+const removedAge = arrganizer.getTables();
+console.log(removedAge);`
 </script>
 
 <MethodCall {call} id="removekey" title="Remove Key" />

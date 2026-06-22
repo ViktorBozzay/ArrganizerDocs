@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [svelte()],
   resolve: {
     alias: {
-      arrganizer: "arrganizer/dist/index.js",
+      "data-arrganizer": "data-arrganizer/dist/index.js",
     },
   },
 });

@@ -4,7 +4,6 @@
   import CodeBlock from "../components/CodeBlock.svelte";
   import MethodArguments from "../components/MethodArguments.svelte";
   import MethodCall from "../components/MethodCall.svelte";
-  import JsonBlock from "../components/JSONBlock.svelte";
   import ResultView from "../components/ResultView.svelte";
 
   import {data} from "../mock/data";
@@ -12,34 +11,32 @@
   import type { CodeWordType } from "../types/CodeWordType";
 
   const call: { type: CodeWordType, text: string}[] = [
-    { text: "groupByKey", type: "function",},
+    { text: "sample", type: "function",},
     { text: "(", type: "punctuation" },
-    { text: "key", type: "variable" },
+    { text: "n", type: "variable" },
     { text: ": ", type: "punctuation" },
-    { text: "keyof ", type: "keyword" },
-    { text: "DataRow", type: "object" },
+    { text: "number", type: "keyword" },
     { text: "): ", type: "punctuation" },
     { text: "this", type: "keyword", },
   ]
 
   const argumentum = [
-    { arg: "key", desc: "The key to group by.", type: "variable"},
+    { arg: "n", desc: "Number of random rows to sample from each data set.", type: "variable"},
   ];
 
   const arrganizer = new Arrganizer(data);
-  arrganizer.groupByKey("age");
-  const groupedAge = arrganizer.getTables();
-  // console.log(groupedAge);
+  arrganizer.sample(3);
+  const result = arrganizer.getTables();
 
   const code = `const arrganizer = new Arrganizer(data);
-arrganizer.groupByKey("age");
-const groupedAge = arrganizer.getTables();
-console.log(groupedAge);`
+arrganizer.sample(3);
+const result = arrganizer.getTables();
+console.log(result);`
 </script>
 
-<MethodCall {call} id="groupbykey"  title="Group By Key"/>
+<MethodCall {call} id="sample" title="Sample" />
 <p>
-  Groups the data by a specified key.
+  Returns a random sample of n rows from each data set.
 </p>
 <h4>Parameters:</h4>
 <MethodArguments details={argumentum} />
@@ -47,4 +44,4 @@ console.log(groupedAge);`
 <CodeBlock {code}/>
 
 <h4>Results:</h4>
-<ResultView result={groupedAge} />
+<ResultView result={result} />

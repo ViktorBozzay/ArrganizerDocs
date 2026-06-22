@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {Arrganizer} from "arrganizer";
+  import {Arrganizer} from "data-arrganizer";
 
   import CodeBlock from "../components/CodeBlock.svelte";
   import MethodArguments from "../components/MethodArguments.svelte";
@@ -12,8 +12,12 @@
   import type { CodeWordType } from "../types/CodeWordType";
 
   const call: { type: CodeWordType, text: string}[] = [
-    { text: "groupByKey", type: "function",},
+    { text: "groupByDate", type: "function",},
     { text: "(", type: "punctuation" },
+    { text: "timeRange", type: "variable" },
+    { text: ": ", type: "punctuation" },
+    { text: "TimeRange", type: "object" },
+    { text: ", ", type: "punctuation" },
     { text: "key", type: "variable" },
     { text: ": ", type: "punctuation" },
     { text: "keyof ", type: "keyword" },
@@ -26,6 +30,7 @@
     { arg: "timeRange", desc: "The interval to group by.", type: "variable", children: [
       { arg: "YEAR", desc: "The data grouped yearly.", type: "string"},
       { arg: "MONTH", desc: "The data grouped monthly.", type: "string"},
+      { arg: "WEEK", desc: "The data grouped by week.", type: "string"},
       { arg: "DAY", desc: "The data grouped daily.", type: "string"},
       { arg: "HOUR", desc: "The data grouped hourly.", type: "string"},
       { arg: "MINUTE", desc: "The data grouped in minutes.", type: "string"},

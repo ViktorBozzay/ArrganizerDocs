@@ -4,7 +4,6 @@
   import CodeBlock from "../components/CodeBlock.svelte";
   import MethodArguments from "../components/MethodArguments.svelte";
   import MethodCall from "../components/MethodCall.svelte";
-  import JsonBlock from "../components/JSONBlock.svelte";
   import ResultView from "../components/ResultView.svelte";
 
   import {data} from "../mock/data";
@@ -12,34 +11,42 @@
   import type { CodeWordType } from "../types/CodeWordType";
 
   const call: { type: CodeWordType, text: string}[] = [
-    { text: "groupByKey", type: "function",},
+    { text: "mapRows", type: "function",},
     { text: "(", type: "punctuation" },
-    { text: "key", type: "variable" },
+    { text: "callback", type: "variable" },
+    { text: ": (", type: "punctuation" },
+    { text: "row", type: "variable" },
     { text: ": ", type: "punctuation" },
-    { text: "keyof ", type: "keyword" },
+    { text: "DataRow", type: "object" },
+    { text: ") => ", type: "punctuation" },
     { text: "DataRow", type: "object" },
     { text: "): ", type: "punctuation" },
     { text: "this", type: "keyword", },
   ]
 
   const argumentum = [
-    { arg: "key", desc: "The key to group by.", type: "variable"},
+    { arg: "callback", desc: "A function that receives each row and returns a new row.", type: "function"},
   ];
 
   const arrganizer = new Arrganizer(data);
-  arrganizer.groupByKey("age");
-  const groupedAge = arrganizer.getTables();
-  // console.log(groupedAge);
+  arrganizer.mapRows((row) => ({
+    ...row,
+    label: `${row.name} (${row.job})`,
+  }));
+  const result = arrganizer.getTables();
 
   const code = `const arrganizer = new Arrganizer(data);
-arrganizer.groupByKey("age");
-const groupedAge = arrganizer.getTables();
-console.log(groupedAge);`
+arrganizer.mapRows((row) => ({
+  ...row,
+  label: \`\${row.name} (\${row.job})\`,
+}));
+const result = arrganizer.getTables();
+console.log(result);`
 </script>
 
-<MethodCall {call} id="groupbykey"  title="Group By Key"/>
+<MethodCall {call} id="maprows" title="Map Rows" />
 <p>
-  Groups the data by a specified key.
+  Transforms every row in each data set using the provided callback function.
 </p>
 <h4>Parameters:</h4>
 <MethodArguments details={argumentum} />
@@ -47,4 +54,4 @@ console.log(groupedAge);`
 <CodeBlock {code}/>
 
 <h4>Results:</h4>
-<ResultView result={groupedAge} />
+<ResultView result={result} />

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {Arrganizer} from "arrganizer";
+  import {Arrganizer} from "data-arrganizer";
 
   import CodeBlock from "../components/CodeBlock.svelte";
   import MethodArguments from "../components/MethodArguments.svelte";
@@ -22,9 +22,9 @@
     { text: "values", type: "variable" },
     { text: ": ", type: "punctuation" },
     { text: "DataRow", type: "object" },
-    { text: "[", type: "keyword" },
+    { text: "[", type: "punctuation" },
     { text: "T", type: "object" },
-    { text: "][]", type: "keyword" },
+    { text: "][]", type: "punctuation" },
     { text: "): ", type: "punctuation" },
     { text: "this", type: "keyword", },
   ]

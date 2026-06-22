@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {Arrganizer} from "arrganizer";
+  import {Arrganizer} from "data-arrganizer";
 
   import CodeBlock from "../components/CodeBlock.svelte";
   import MethodArguments from "../components/MethodArguments.svelte";
@@ -18,8 +18,8 @@
 
   const returns = [
     {
-      arg: "DataSet",
-      desc: "The current data set.",
+      arg: "Data",
+      desc: "The current data (DataRow[]).",
       type: "object"
     },
   ];

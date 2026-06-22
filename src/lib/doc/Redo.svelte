@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {Arrganizer} from "arrganizer";
+  import {Arrganizer} from "data-arrganizer";
 
   import CodeBlock from "../components/CodeBlock.svelte";
   import MethodArguments from "../components/MethodArguments.svelte";
@@ -12,9 +12,9 @@
   import type { CodeWordType } from "../types/CodeWordType";
 
   const call: { type: CodeWordType, text: string}[] = [
-    { text: "undo", type: "function",},
+    { text: "redo", type: "function",},
     { text: "(): ", type: "punctuation" },
-    { text: "void", type: "keyword", },
+    { text: "this", type: "keyword", },
   ]
 
   const arrganizer = new Arrganizer(data);

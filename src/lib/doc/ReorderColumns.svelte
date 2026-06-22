@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {Arrganizer} from "arrganizer";
+  import {Arrganizer} from "data-arrganizer";
 
   import CodeBlock from "../components/CodeBlock.svelte";
   import MethodArguments from "../components/MethodArguments.svelte";
@@ -15,13 +15,11 @@
     { text: "reorderColumns", type: "function",},
     { text: "(", type: "punctuation" },
     { text: "columnOrder", type: "variable" },
-    { text: ": ", type: "punctuation" },
+    { text: ": (", type: "punctuation" },
     { text: "keyof ", type: "keyword" },
     { text: "DataRow", type: "object" },
-    { text: ", ", type: "punctuation" },
+    { text: ")[], ", type: "punctuation" },
     { text: "addMissing", type: "variable" },
-    { text: ": ", type: "punctuation" },
-    { text: "boolean", type: "keyword" },
     { text: " = ", type: "punctuation" },
     { text: "true", type: "keyword" },
     { text: "): ", type: "punctuation" },

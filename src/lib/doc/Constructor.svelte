@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {Arrganizer} from "arrganizer";
+  import {Arrganizer} from "data-arrganizer";
 
   import JsonBlock from "../components/JSONBlock.svelte";
   import CodeBlock from "../components/CodeBlock.svelte"
@@ -64,6 +64,11 @@
         {
           arg: "locale",
           desc: 'Locale used for formatting (default: "en").',
+          type: "variable",
+        },
+        {
+          arg: "decimals",
+          desc: "The number of decimal places for number formatting (default: 3).",
           type: "variable",
         },
       ]
@@ -134,9 +139,9 @@ console.log(original);`
   };
 
   const cellFormats = {
-    "salary": "usd",
-    "name": (name: string) => {
-      const [first, last] = name.split(" ");
+    "salary": "usd" as const,
+    "name": (name: unknown) => {
+      const [first, last] = (name as string).split(" ");
       return last.toUpperCase() + ", " + first;
     },
   };

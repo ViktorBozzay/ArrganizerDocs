@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Arrganizer } from "arrganizer";
+  import { Arrganizer } from "data-arrganizer";
   import CodeBlock from "../components/CodeBlock.svelte";
   import MethodArguments from "../components/MethodArguments.svelte";
   import MethodCall from "../components/MethodCall.svelte";
@@ -35,11 +35,11 @@
     { text: "getTables", type: "function",},
     { text: "(", type: "punctuation" },
     { text: "showSummary", type: "object", },
-    { text: "?: ", type: "keyword", },
+    { text: "?: ", type: "punctuation", },
     { text: "Partial&lt;Record&lt;keyof ", type:  "object" },
     { text: "Summary", type: "object" },
     { text: ", ", type: "punctuation" },
-    { text: "boolean", type: "boolean" },
+    { text: "boolean&gt;&gt;", type: "object" },
     { text: "): ", type: "punctuation" },
     { text: "TableData[]", type: "object" },
   ]

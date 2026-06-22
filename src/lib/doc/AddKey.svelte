@@ -4,7 +4,6 @@
   import CodeBlock from "../components/CodeBlock.svelte";
   import MethodArguments from "../components/MethodArguments.svelte";
   import MethodCall from "../components/MethodCall.svelte";
-  import JsonBlock from "../components/JSONBlock.svelte";
   import ResultView from "../components/ResultView.svelte";
 
   import {data} from "../mock/data";
@@ -12,18 +11,17 @@
   import type { CodeWordType } from "../types/CodeWordType";
 
   const call: { type: CodeWordType, text: string}[] = [
-    { text: "modifyValue", type: "function",},
+    { text: "addKey", type: "function",},
     { text: "(", type: "punctuation" },
     { text: "key", type: "variable" },
     { text: ": ", type: "punctuation" },
-    { text: "keyof ", type: "keyword" },
-    { text: "DataRow", type: "object" },
+    { text: "string", type: "keyword" },
     { text: ", ", type: "punctuation" },
-    { text: "callback", type: "function" },
+    { text: "callback", type: "variable" },
     { text: ": (", type: "punctuation" },
-    { text: "value", type: "keyword" },
+    { text: "row", type: "variable" },
     { text: ": ", type: "punctuation" },
-    { text: "unknown", type: "keyword" },
+    { text: "DataRow", type: "object" },
     { text: ") => ", type: "punctuation" },
     { text: "unknown", type: "keyword" },
     { text: "): ", type: "punctuation" },
@@ -31,24 +29,23 @@
   ]
 
   const argumentum = [
-    { arg: "key", desc: "The key to modify.", type: "variable"},
-    { arg: "callback", desc: "The function that makes the modification on the value.", type: "function"},
+    { arg: "key", desc: "The name of the new column.", type: "variable"},
+    { arg: "callback", desc: "A function that receives each row and returns the value for the new column.", type: "function"},
   ];
 
   const arrganizer = new Arrganizer(data);
-  arrganizer.modifyValue("salary", (salary) => Math.ceil((salary as number) * 1.1));
-  const raisedSalary = arrganizer.getTables();
-  // console.log(raisedSalary);
+  arrganizer.addKey("salaryWithTax", (row) => Math.ceil((row.salary as number) * 1.27));
+  const result = arrganizer.getTables();
 
   const code = `const arrganizer = new Arrganizer(data);
-arrganizer.modifyValue("salary", (salary: number) => Math.ceil(salary * 1.1));
-const raisedSalary = arrganizer.getTables();
-console.log(raisedSalary);`;
+arrganizer.addKey("salaryWithTax", (row) => Math.ceil((row.salary as number) * 1.27));
+const result = arrganizer.getTables();
+console.log(result);`
 </script>
 
-<MethodCall {call} id="modifyvalue" title="Modify Value" />
+<MethodCall {call} id="addkey" title="Add Key" />
 <p>
-  Modifies the value for a specific key in the data.
+  Adds a new computed column to all data sets.
 </p>
 <h4>Parameters:</h4>
 <MethodArguments details={argumentum} />
@@ -56,4 +53,4 @@ console.log(raisedSalary);`;
 <CodeBlock {code}/>
 
 <h4>Results:</h4>
-<ResultView result={raisedSalary} />
+<ResultView result={result} />

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {Arrganizer} from "arrganizer";
+  import {Arrganizer} from "data-arrganizer";
 
   import CodeBlock from "../components/CodeBlock.svelte";
   import MethodArguments from "../components/MethodArguments.svelte";
@@ -14,21 +14,15 @@
   const call: { type: CodeWordType, text: string}[] = [
     { text: "contains", type: "function",},
     { text: "(", type: "punctuation" },
-    { text: "key", type: "variable" },
-    { text: ": ", type: "punctuation" },
-    { text: "keyof ", type: "keyword" },
-    { text: "Data[0]", type: "object" },
-    { text: ", ", type: "punctuation" },
     { text: "value", type: "variable" },
     { text: ": ", type: "punctuation" },
-    { text: "string | number", type: "keyword" },
+    { text: "string", type: "keyword" },
     { text: "): ", type: "punctuation" },
     { text: "this", type: "keyword", },
   ]
 
   const argumentum = [
-    { arg: "key", desc: "The key to check.", type: "variable"},
-    { arg: "value", desc: "The value to check for.", type: "variable"},
+    { arg: "value", desc: "The value to search for in all columns.", type: "variable"},
   ];
 
   const arrganizer = new Arrganizer(data);

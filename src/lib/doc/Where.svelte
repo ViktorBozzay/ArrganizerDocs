@@ -4,7 +4,6 @@
   import CodeBlock from "../components/CodeBlock.svelte";
   import MethodArguments from "../components/MethodArguments.svelte";
   import MethodCall from "../components/MethodCall.svelte";
-  import JsonBlock from "../components/JSONBlock.svelte";
   import ResultView from "../components/ResultView.svelte";
 
   import {data} from "../mock/data";
@@ -12,43 +11,43 @@
   import type { CodeWordType } from "../types/CodeWordType";
 
   const call: { type: CodeWordType, text: string}[] = [
-    { text: "modifyValue", type: "function",},
+    { text: "where", type: "function",},
     { text: "(", type: "punctuation" },
     { text: "key", type: "variable" },
     { text: ": ", type: "punctuation" },
     { text: "keyof ", type: "keyword" },
     { text: "DataRow", type: "object" },
     { text: ", ", type: "punctuation" },
-    { text: "callback", type: "function" },
-    { text: ": (", type: "punctuation" },
-    { text: "value", type: "keyword" },
+    { text: "op", type: "variable" },
     { text: ": ", type: "punctuation" },
-    { text: "unknown", type: "keyword" },
-    { text: ") => ", type: "punctuation" },
+    { text: '"|" | "<" | ">=" | "<=" | "===" | "!==" | "contains"', type: "string" },
+    { text: ", ", type: "punctuation" },
+    { text: "value", type: "variable" },
+    { text: ": ", type: "punctuation" },
     { text: "unknown", type: "keyword" },
     { text: "): ", type: "punctuation" },
     { text: "this", type: "keyword", },
   ]
 
   const argumentum = [
-    { arg: "key", desc: "The key to modify.", type: "variable"},
-    { arg: "callback", desc: "The function that makes the modification on the value.", type: "function"},
+    { arg: "key", desc: "The column to filter on.", type: "variable"},
+    { arg: "op", desc: 'The comparison operator: ">" | "<" | ">=" | "<=" | "===" | "!==" | "contains".', type: "string"},
+    { arg: "value", desc: "The value to compare against.", type: "variable"},
   ];
 
   const arrganizer = new Arrganizer(data);
-  arrganizer.modifyValue("salary", (salary) => Math.ceil((salary as number) * 1.1));
-  const raisedSalary = arrganizer.getTables();
-  // console.log(raisedSalary);
+  arrganizer.where("age", ">=", 28);
+  const result = arrganizer.getTables();
 
   const code = `const arrganizer = new Arrganizer(data);
-arrganizer.modifyValue("salary", (salary: number) => Math.ceil(salary * 1.1));
-const raisedSalary = arrganizer.getTables();
-console.log(raisedSalary);`;
+arrganizer.where("age", ">=", 28);
+const result = arrganizer.getTables();
+console.log(result);`
 </script>
 
-<MethodCall {call} id="modifyvalue" title="Modify Value" />
+<MethodCall {call} id="where" title="Where" />
 <p>
-  Modifies the value for a specific key in the data.
+  Filters rows where a key satisfies a condition using comparison operators.
 </p>
 <h4>Parameters:</h4>
 <MethodArguments details={argumentum} />
@@ -56,4 +55,4 @@ console.log(raisedSalary);`;
 <CodeBlock {code}/>
 
 <h4>Results:</h4>
-<ResultView result={raisedSalary} />
+<ResultView result={result} />

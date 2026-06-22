@@ -1,7 +1,7 @@
 {
   "name": "arrganizerdocs",
   "private": true,
-  "version": "0.0.2",
+  "version": "0.1.0",
   "type": "module",
   "author": "Your Name",
   "scripts": {
@@ -22,7 +22,7 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
-    "arrganizer": "^0.0.2",
+    "data-arrganizer": "^0.1.0",
     "svelte-highlight": "^7.7.0"
   }
 }

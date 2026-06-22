@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {Arrganizer} from "arrganizer";
+  import {Arrganizer} from "data-arrganizer";
 
   import CodeBlock from "../components/CodeBlock.svelte";
   import MethodArguments from "../components/MethodArguments.svelte";
@@ -30,7 +30,7 @@
 
   const argumentum = [
     { arg: "key", desc: "The key to sort by.", type: "variable"},
-    { arg: "ascending", desc: 'Optional boolean to specify sorting order (default: "asc" for ascending).', type: "variable"},
+    { arg: "direction", desc: 'Optional direction to specify sorting order ("asc" for ascending, "desc" for descending, default: "asc").', type: "variable"},
   ];
 
   const arrganizer = new Arrganizer(data);
