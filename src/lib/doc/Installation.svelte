@@ -5,13 +5,13 @@
 
 <h2 id="installation">Installation</h2>
 <p>To install the <code class="object">Arrganizer</code> class, run the following command:</p>
-<CodeBlock code="npm i arrganizer" />
-<p>This command installs the Arrganizer package, which includes the <code class="object">Arrganizer</code> class and
+<CodeBlock code="npm i data-arrganizer" />
+<p>This command installs the data-arrganizer package, which includes the <code class="object">Arrganizer</code> class and
   its dependencies. You can then import and use the class in your TypeScript or JavaScript project as shown in the
   examples below.</p>
 <p>To use the <code class="object">Arrganizer</code>, you need to import it into your TypeScript or JavaScript file.
 </p>
-<CodeBlock code="import &#123; Arrganizer &#125; from &#39;arrganizer&#39;;" />
+<CodeBlock code="import &#123; Arrganizer &#125; from &#39;data-arrganizer&#39;;" />
 
 <p>Ensure that all dependencies like formatters and utility functions (
   <code class="function">formatNumbers</code>
